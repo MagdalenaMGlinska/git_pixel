@@ -1,15 +1,44 @@
 body {
     text-align: center;
+    background-image:url(https://media.giphy.com/media/9bTjZrytydVRK/giphy.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
+button{
+    cursor:pointer;
+    border-radius: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+}
+
+
 h1 {
-    font-family: Monoton;
+    font-family: 'Bungee Shade', cursive;
     font-size: 70px;
+    color: #D92006;
     margin: 0.2em;
+}
+
+ol {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    text-align: left;
+    display: block;
+    margin: 2% 40%;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    width: 250px;
+    border: 1px solid black;
+    background-color: #ECF346;
+    border-radius: 15px;
 }
 
 h2 {
     margin: 1em 0 0.25em;
+    color: #ECF346;
+    font-family: 'Bungee', cursive;
+    font-size: 30px;
 }
 
 h2:first-of-type {
@@ -19,6 +48,7 @@ h2:first-of-type {
 table,
 tr,
 td {
+    cursor: auto;
     border: 1px solid black;
 }
 
@@ -37,4 +67,15 @@ td {
 
 input[type=number] {
     width: 6em;
+}
+
+#sizePicker{
+  color:#ffffff;
+  font-family: 'Roboto', sans-serif;
+}
+
+#colorPicker{
+  position: center;
+  left: 110px;
+  font-family: 'Roboto', sans-serif;
 }
