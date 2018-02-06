@@ -3,42 +3,51 @@
 
 // When size is submitted by the user, call makeGrid()
 
-//Below the code to draw pixel art on a customizable canvas
+//Code to draw pixel art on a customizable canvas
 
-//defining variables, accessing the DOM using methods of the document object
+//1st step: defining variables
+//.ready() method to make sure the DOM is ready before the jQuery code executes
 $(document).ready(function() {
   let designCanvas=$('#pixel_canvas');
   let table=$('table');
   let color=$('input[type="color"]');
 
-//set the size of the cross stitch canvas
+//create a table, set the size of the cross stitch canvas
 function makeGrid(height, width) {
    let Height=$('#input_height').val();
 	 let Width=$('#input_width').val();
 	  table.html('');
-    table.css('background-color','white');  
+    table.css('background-color','lightgrey');
 
 
-//customizable canvas - height to extend cells, width to extend rows
+//design customizable canvas - height to extend cells, width to extend rows
 	for (let h=1; h<=Height ;h++){
     designCanvas.append
-      ('<tr><td></td></tr>');}
+      ('<tr><td></td></tr>');
+    }
   for (let w=1; w<Width ;w++){
       $('tr').append
       ('<td></td>');
-  }}
+  }
+  $('td').dblclick(function(){
+      $(this).css('background-color','lightgrey');
+      });
+}
 
-//Buttons
-//Declaring functions and attaching them to DOM objects as event listeners
-//Event listeners is used to trigger grid creation and to modify the grid colors
-//Loops to dynamically clear and create the table based on user input
-$('form').submit(function(e){   //the function make grid with the button
-  e.preventDefault();
+//Event listeners are used to trigger grid creation and modify the colors - color input
+//The function make grid with the button
+//Clear all to dynamically clear the table
+
+
+$('form').submit(function(evt){
+  evt.preventDefault();
   makeGrid();
   });
-$('#clear_button').on('click',function(){  //clear all
-  $('td').css('background-color','white');
+
+$('#clear_button').click(function(){
+  $('td').css('background-color','lightgrey');
   });
+
 $('table').on('click','td',function(evt){
   $(evt.target).css({'background-color':color.val()});
   });
